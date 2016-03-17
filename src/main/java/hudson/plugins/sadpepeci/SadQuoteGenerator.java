@@ -19,44 +19,34 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package hudson.plugins.sadpepe-ci;
+package hudson.plugins.sadpepeci;
 
-import hudson.model.Result;
+import java.util.Random;
 
 /**
- * This class provides various Pepe's styles.
+ * {@link SadQuoteGenerator} provides sad quotes.
  * @author smrpr
  */
-public enum Style {
+public class SadQuoteGenerator {
+
+    private static final String[] FACTS = {
+            "Support pepe economy, pls don't steal.",
+            "1998 is as far away as 2034"
+            "We all are fragile.",
+            "Nobody cares",
+            "No dreams. Only tears now.",
+            "Born too late to explore the Earth. Born to soon to explore the galaxy."};
 
     /**
-     * A smug Pepe.
+     * Random instance.
      */
-    SMUG_PEPE,
-    /**
-     * A quite nervous Pepe.
-     */
-    SWEATY_PEPE,
-    /**
-     * A Pepe crying in pain.
-     */
-    CRY_PEPE;
+    private static final Random RANDOM = new Random();
 
     /**
-     * Gets the style corresponding to the build result.
-     * @param result
-     *            the build result
-     * @return the style
+     * Retrieves a random quote.
+     * @return a random quote
      */
-    public static final Style get(final Result result) {
-        Style style;
-        if (Result.FAILURE.equals(result)) {
-            style = CRY_PEPE;
-        } else if (Result.SUCCESS.equals(result)) {
-            style = SMUG_PEPE;
-        } else {
-            style = SWEATY_PEPE;
-        }
-        return style;
+    public String random() {
+        return FACTS[RANDOM.nextInt(FACTS.length)];
     }
 }

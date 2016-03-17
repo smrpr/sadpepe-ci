@@ -1,4 +1,4 @@
-package hudson.plugins.sadpepe-ci;
+package hudson.plugins.sadpepeci;
 
 import hudson.model.Result;
 import junit.framework.TestCase;

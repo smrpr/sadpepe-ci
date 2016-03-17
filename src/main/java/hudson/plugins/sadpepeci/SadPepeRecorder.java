@@ -19,7 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package hudson.plugins.sadpepe-ci;
+package hudson.plugins.sadpepeci;
 
 import hudson.Launcher;
 import hudson.model.AbstractBuild;

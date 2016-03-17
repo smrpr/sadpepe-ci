@@ -1,12 +1,12 @@
 <?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form" xmlns:i="jelly:fmt" xmlns:local="local">
     <tr>
-        <td><img src="${rootURL}/plugin/sadpepe-ci/images/icon.jpg" width="48" height="48" alt="${it.displayName} Icon"/></td>
+        <td><img src="${rootURL}/plugin/sadpepeci/images/icon.jpg" width="48" height="48" alt="${it.displayName} Icon"/></td>
         <td style="vertical-align:middle"><j:out value="${it.sadquote}"/></td>
     </tr>
     <style>
         .pepe-style {
-          background-image: url(${rootURL}/plugin/sadpepe-ci/images/<j:out value="${it.style.toString().toLowerCase()}"/>.jpg);
+          background-image: url(${rootURL}/plugin/sadpepeci/images/<j:out value="${it.style.toString().toLowerCase()}"/>.jpg);
           background-repeat: no-repeat;
           background-position: bottom right;
           padding-bottom: 270px !important;

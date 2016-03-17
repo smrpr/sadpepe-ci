@@ -19,46 +19,44 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package hudson.plugins.sadpepe-ci;
+package hudson.plugins.sadpepeci;
 
-import hudson.Extension;
-import hudson.model.AbstractProject;
-import hudson.tasks.BuildStepDescriptor;
-import hudson.tasks.Publisher;
+import hudson.model.Result;
 
 /**
- * This class provides build step description.
+ * This class provides various Pepe's styles.
  * @author smrpr
  */
-@Extension
-public class SadPepeDescriptor extends BuildStepDescriptor<Publisher> {
+public enum Style {
 
     /**
-     * Constructs a {@link SadPepeDescriptor}.
+     * A smug Pepe.
      */
-    public SadPepeDescriptor() {
-        super(SadPepeRecorder.class);
-    }
+    SMUG_PEPE,
+    /**
+     * A quite nervous Pepe.
+     */
+    SWEATY_PEPE,
+    /**
+     * A Pepe crying in pain.
+     */
+    CRY_PEPE;
 
     /**
-     * Gets the descriptor display name, used in the post step checkbox
-     * description.
-     * @return the descriptor display name
+     * Gets the style corresponding to the build result.
+     * @param result
+     *            the build result
+     * @return the style
      */
-    @Override
-    public final String getDisplayName() {
-        return "Activate Sad Pepe";
-    }
-
-    /**
-     * Checks whether this descriptor is applicable.
-     * @param clazz
-     *            the class
-     * @return true
-     */
-    @Override
-    public final boolean isApplicable(
-            final Class<? extends AbstractProject> clazz) {
-        return true;
+    public static final Style get(final Result result) {
+        Style style;
+        if (Result.FAILURE.equals(result)) {
+            style = CRY_PEPE;
+        } else if (Result.SUCCESS.equals(result)) {
+            style = SMUG_PEPE;
+        } else {
+            style = SWEATY_PEPE;
+        }
+        return style;
     }
 }

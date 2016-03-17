@@ -19,34 +19,46 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package hudson.plugins.sadpepe-ci;
+package hudson.plugins.sadpepeci;
 
-import java.util.Random;
+import hudson.Extension;
+import hudson.model.AbstractProject;
+import hudson.tasks.BuildStepDescriptor;
+import hudson.tasks.Publisher;
 
 /**
- * {@link SadQuoteGenerator} provides sad quotes.
+ * This class provides build step description.
  * @author smrpr
  */
-public class SadQuoteGenerator {
-
-    private static final String[] FACTS = {
-            "Support pepe economy, pls don't steal.",
-            "1998 is as far away as 2034"
-            "We all are fragile.",
-            "Nobody cares",
-            "No dreams. Only tears now.",
-            "Born too late to explore the Earth. Born to soon to explore the galaxy."};
+@Extension
+public class SadPepeDescriptor extends BuildStepDescriptor<Publisher> {
 
     /**
-     * Random instance.
+     * Constructs a {@link SadPepeDescriptor}.
      */
-    private static final Random RANDOM = new Random();
+    public SadPepeDescriptor() {
+        super(SadPepeRecorder.class);
+    }
 
     /**
-     * Retrieves a random quote.
-     * @return a random quote
+     * Gets the descriptor display name, used in the post step checkbox
+     * description.
+     * @return the descriptor display name
      */
-    public String random() {
-        return FACTS[RANDOM.nextInt(FACTS.length)];
+    @Override
+    public final String getDisplayName() {
+        return "Activate Sad Pepe";
+    }
+
+    /**
+     * Checks whether this descriptor is applicable.
+     * @param clazz
+     *            the class
+     * @return true
+     */
+    @Override
+    public final boolean isApplicable(
+            final Class<? extends AbstractProject> clazz) {
+        return true;
     }
 }

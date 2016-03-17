@@ -1,4 +1,4 @@
-package hudson.plugins.sadpepe-ci;
+package hudson.plugins.sadpepeci;
 
 import static org.mockito.Mockito.mock;
 import hudson.model.AbstractProject;

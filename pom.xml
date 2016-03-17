@@ -7,7 +7,7 @@
         <relativePath />
     </parent>
     <groupId>org.jvnet.hudson.plugins</groupId>
-    <artifactId>sadpepe-ci</artifactId>
+    <artifactId>sadpepeci</artifactId>
     <version>1.0</version>
     <name>Sad Pepe Plugin</name>
     <description>Displays a picture of Sad Pepe and a random Sad Pepe sad quote on each build page.</description>
@@ -133,9 +133,9 @@
     </reporting>
     
     <scm>
-        <connection>scm:git:git://github.com/smrpr/sadpepe-ci.git</connection>
-        <developerConnection>scm:git:git@github.com:smrpr/sadpepe-ci.git</developerConnection>
-        <url>github.com/smrpr/sadpepe-ci</url>
+        <connection>scm:git:git://github.com/smrpr/sadpepeci.git</connection>
+        <developerConnection>scm:git:git@github.com:smrpr/sadpepeci.git</developerConnection>
+        <url>github.com/smrpr/sadpepeci</url>
       <tag>HEAD</tag>
   </scm>
 
