@@ -31,7 +31,7 @@ public class SadQuoteGenerator {
 
     private static final String[] FACTS = {
             "Support pepe economy, pls don't steal.",
-            "1998 is as far away as 2034"
+            "1998 is as far away as 2034",
             "We all are fragile.",
             "Nobody cares",
             "No dreams. Only tears now.",
