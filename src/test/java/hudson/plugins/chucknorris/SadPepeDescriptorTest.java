@@ -1,19 +1,19 @@
-package hudson.plugins.chucknorris;
+package hudson.plugins.sadpepe-ci;
 
 import static org.mockito.Mockito.mock;
 import hudson.model.AbstractProject;
 import junit.framework.TestCase;
 
-public class BeardDescriptorTest extends TestCase {
+public class SadPepeDescriptorTest extends TestCase {
 
-	private BeardDescriptor descriptor;
+	private SadPepeDescriptor descriptor;
 
 	public void setUp() {
-		descriptor = new BeardDescriptor();
+		descriptor = new SadPepeDescriptor();
 	}
 
 	public void testGetDisplayName() {
-		assertEquals("Activate Chuck Norris", descriptor.getDisplayName());
+		assertEquals("Activate Sad Pepe", descriptor.getDisplayName());
 	}
 
 	public void testIsApplicableGivesTrue() {

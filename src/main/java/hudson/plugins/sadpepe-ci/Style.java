@@ -19,3 +19,44 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+package hudson.plugins.sadpepe-ci;
+
+import hudson.model.Result;
+
+/**
+ * This class provides various Pepe's styles.
+ * @author smrpr
+ */
+public enum Style {
+
+    /**
+     * A smug Pepe.
+     */
+    SMUG_PEPE,
+    /**
+     * A quite nervous Pepe.
+     */
+    SWEATY_PEPE,
+    /**
+     * A Pepe crying in pain.
+     */
+    CRY_PEPE;
+
+    /**
+     * Gets the style corresponding to the build result.
+     * @param result
+     *            the build result
+     * @return the style
+     */
+    public static final Style get(final Result result) {
+        Style style;
+        if (Result.FAILURE.equals(result)) {
+            style = CRY_PEPE;
+        } else if (Result.SUCCESS.equals(result)) {
+            style = SMUG_PEPE;
+        } else {
+            style = SWEATY_PEPE;
+        }
+        return style;
+    }
+}

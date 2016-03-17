@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2009 Cliffano Subagio
+ * Copyright (c) 2016 Samuel Parra
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -19,7 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package hudson.plugins.chucknorris;
+package hudson.plugins.sadpepe-ci;
 
 import hudson.Extension;
 import hudson.model.AbstractProject;
@@ -27,20 +27,17 @@ import hudson.tasks.BuildStepDescriptor;
 import hudson.tasks.Publisher;
 
 /**
- * This class provides build step description. If you're interested to become a
- * fan of Chuck Norris' beard, please visit <a
- * href="http://www.facebook.com/pages/Chuck-Norriss-Beard/80391285997"
- * >http://www.facebook.com/pages/Chuck-Norriss-Beard/80391285997</a>.
- * @author cliffano
+ * This class provides build step description.
+ * @author smrpr
  */
 @Extension
-public class BeardDescriptor extends BuildStepDescriptor<Publisher> {
+public class SadPepeDescriptor extends BuildStepDescriptor<Publisher> {
 
     /**
-     * Constructs a {@link BeardDescriptor}.
+     * Constructs a {@link SadPepeDescriptor}.
      */
-    public BeardDescriptor() {
-        super(CordellWalkerRecorder.class);
+    public SadPepeDescriptor() {
+        super(SadPepeRecorder.class);
     }
 
     /**
@@ -50,14 +47,14 @@ public class BeardDescriptor extends BuildStepDescriptor<Publisher> {
      */
     @Override
     public final String getDisplayName() {
-        return "Activate Chuck Norris";
+        return "Activate Sad Pepe";
     }
 
     /**
      * Checks whether this descriptor is applicable.
      * @param clazz
      *            the class
-     * @return true - of course the beard is applicable
+     * @return true
      */
     @Override
     public final boolean isApplicable(

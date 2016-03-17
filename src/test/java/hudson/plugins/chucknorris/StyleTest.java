@@ -1,27 +1,27 @@
-package hudson.plugins.chucknorris;
+package hudson.plugins.sadpepe-ci;
 
 import hudson.model.Result;
 import junit.framework.TestCase;
 
 public class StyleTest extends TestCase {
 
-	public void testGetWithFailureResultGivesBadAssStyle() {
-		assertEquals(Style.BAD_ASS, Style.get(Result.FAILURE));
+	public void testGetWithFailureResultGivesCryPepeStyle() {
+		assertEquals(Style.CRY_PEPE, Style.get(Result.FAILURE));
 	}
 
-	public void testGetWithSuccessResultGivesSuitupStyle() {
-		assertEquals(Style.THUMB_UP, Style.get(Result.SUCCESS));
+	public void testGetWithSuccessResultGivesSmugPepeStyle() {
+		assertEquals(Style.SMUG_PEPE, Style.get(Result.SUCCESS));
 	}
 
-	public void testGetWithAbortedResultGivesAlertStyle() {
-		assertEquals(Style.ALERT, Style.get(Result.ABORTED));
+	public void testGetWithAbortedResultGivesSweatyPepeStyle() {
+		assertEquals(Style.SWEATY_PEPE, Style.get(Result.ABORTED));
 	}
 
-	public void testGetWithNotBuiltResultGivesAlertStyle() {
-		assertEquals(Style.ALERT, Style.get(Result.NOT_BUILT));
+	public void testGetWithNotBuiltResultGivesSweatyPepeStyle() {
+		assertEquals(Style.SWEATY_PEPE, Style.get(Result.NOT_BUILT));
 	}
 
-	public void testGetWithUnstableResultGivesAlertStyle() {
-		assertEquals(Style.ALERT, Style.get(Result.UNSTABLE));
+	public void testGetWithUnstableResultGivesSweatyPepeStyle() {
+		assertEquals(Style.SWEATY_PEPE, Style.get(Result.UNSTABLE));
 	}
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2009 Cliffano Subagio
+ * Copyright (c) 2016 Samuel Parra
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -19,7 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package hudson.plugins.chucknorris;
+package hudson.plugins.sadpepe-ci;
 
 import hudson.Launcher;
 import hudson.model.AbstractBuild;
@@ -35,47 +35,44 @@ import java.util.logging.Logger;
 import org.kohsuke.stapler.DataBoundConstructor;
 
 /**
- * This class associates a RoundhouseAction to a job or a build. For more info
- * on Cordell Walker, check out <a
- * href="http://www.imdb.com/character/ch0038386/"
- * >http://www.imdb.com/character/ch0038386/</a>.
- * @author cliffano
+ * This class associates a FeelingsStatus to a job or a build. For more info
+ * @author smrpr
  */
-public class CordellWalkerRecorder extends Recorder {
+public class SadPepeRecorder extends Recorder {
 
     /**
      * Logger.
      */
     private static final Logger LOGGER = Logger
-            .getLogger(CordellWalkerRecorder.class.getName());
+            .getLogger(SadPepeRecorder.class.getName());
 
     /**
-     * Fact generator.
+     * SadQuote generator.
      */
-    private FactGenerator factGenerator;
+    private SadQuoteGenerator sadQuoteGenerator;
 
     /**
-     * Constructs a {@link CordellWalkerRecorder} with default
-     * {@link FactGenerator}.
+     * Constructs a {@link SadPepeRecorder} with default
+     * {@link SadQuoteGenerator}.
      */
     @DataBoundConstructor
-    public CordellWalkerRecorder() {
-        this(new FactGenerator());
+    public SadPepeRecorder() {
+        this(new SadQuoteGenerator());
     }
 
     /**
-     * Constructs a {@link CordellWalkerRecorder} with specified
-     * {@link FactGenerator}.
-     * @param factGenerator
-     *            the fact generator
+     * Constructs a {@link SadPepeRecorder} with specified
+     * {@link SadQuoteGenerator}.
+     * @param sadQuoteGenerator
+     *            the sadquote generator
      */
-    public CordellWalkerRecorder(final FactGenerator factGenerator) {
-        this.factGenerator = factGenerator;
-        LOGGER.info("Chuck Norris is activated");
+    public SadPepeRecorder(final SadQuoteGenerator sadQuoteGenerator) {
+        this.sadQuoteGenerator = sadQuoteGenerator;
+        LOGGER.info("Sad Pepe is activated");
     }
 
     /**
-     * Gets the RoundhouseAction as the project action. This is applicable for
+     * Gets the FeelingsStatus as the project action. This is applicable for
      * each job and only when there's at least one build in the job.
      * @param project
      *            the project
@@ -86,14 +83,14 @@ public class CordellWalkerRecorder extends Recorder {
         Action action = null;
         if (project.getLastBuild() != null) {
             Style style = Style.get(project.getLastBuild().getResult());
-            String fact = factGenerator.random();
-            action = new RoundhouseAction(style, fact);
+            String sadquote = sadQuoteGenerator.random();
+            action = new FeelingsStatus(style, sadquote);
         }
         return action;
     }
 
     /**
-     * Adds RoundhouseAction to the build actions. This is applicable for each
+     * Adds FeelingsStatus to the build actions. This is applicable for each
      * build.
      * @param build
      *            the build
@@ -112,8 +109,8 @@ public class CordellWalkerRecorder extends Recorder {
             final Launcher launcher, final BuildListener listener)
             throws InterruptedException, IOException {
         Style style = Style.get(build.getResult());
-        String fact = factGenerator.random();
-        build.getActions().add(new RoundhouseAction(style, fact));
+        String sadquote = sadQuoteGenerator.random();
+        build.getActions().add(new FeelingsStatus(style, sadquote));
         return true;
     }
 

@@ -1,10 +1,5 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
-<html>
-<head>
-<!--
-
 /**
- * Copyright (c) 2009 Cliffano Subagio
+ * Copyright (c) 2016 Samuel Parra
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,11 +19,34 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
--->
-</head>
-<body bgcolor="white">
+package hudson.plugins.sadpepe-ci;
 
-Provides classes for <a href="https://wiki.jenkins-ci.org/display/JENKINS/ChuckNorris+Plugin">ChuckNorris Plugin</a>.
+import java.util.Random;
 
-</body>
-</html>
+/**
+ * {@link SadQuoteGenerator} provides sad quotes.
+ * @author smrpr
+ */
+public class SadQuoteGenerator {
+
+    private static final String[] FACTS = {
+            "Support pepe economy, pls don't steal.",
+            "1998 is as far away as 2034"
+            "We all are fragile.",
+            "Nobody cares",
+            "No dreams. Only tears now.",
+            "Born too late to explore the Earth. Born to soon to explore the galaxy."};
+
+    /**
+     * Random instance.
+     */
+    private static final Random RANDOM = new Random();
+
+    /**
+     * Retrieves a random quote.
+     * @return a random quote
+     */
+    public String random() {
+        return FACTS[RANDOM.nextInt(FACTS.length)];
+    }
+}
